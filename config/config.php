@@ -6,6 +6,7 @@ define("URL", "http://localhost/ADK-PHP");
 //Nombre del sistema
 define("SYS", "Anker Development Kit");
 define("SYS-SHORT", "ADK");
+define("DES", "Base de sistemas de información.");
 
 //Ruta ambiente QAS
 //define("URL", "https://ambiente-qas.000webhostapp.com/");

@@ -115,9 +115,6 @@
                 <div class="container-fluid navbar-inner">
                     <a href="<?php echo constant("URL") ?>" class="navbar-brand">
                         <!--Logo start-->
-                        <!--logo End-->
-
-                        <!--Logo start-->
                         <div class="logo-main">
                             <div class="logo-normal">
                                 <svg class="text-primary icon-30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">

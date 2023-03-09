@@ -19,7 +19,7 @@
                                     <th>Ap. Paterno</th>
                                     <th>Ap. Materno</th>
                                     <th>Documento</th>
-                                    <th scope="col">
+                                    <th>
                                         <a href="<?php echo constant("URL") ?>/user/new" class=" text-center btn btn-primary btn-icon mt-lg-0 mt-md-0 mt-3">
                                             <i class="btn-inner">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
