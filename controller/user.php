@@ -41,15 +41,17 @@ class User extends Controller
     public function guardar()
     {
         $data = array(
-            "APELLIDO_PAT" => $_POST["apPaterno"],
-            "APELLIDO_MAT" => $_POST["apMaterno"],
-            "NOMBRE" => $_POST["nombre"],
-            "DOCUMENTO" => $_POST["documento"],
-            "EMAIL" => $_POST["correo"],
-            "NUMERO" => $_POST["numero"],
-            "USER" => $_POST["usuario"],
+            "APELLIDO_PAT" => trim($_POST["apPaterno"]),
+            "APELLIDO_MAT" => trim($_POST["apMaterno"]),
+            "NOMBRE" => trim($_POST["nombre"]),
+            "DOCUMENTO" => trim($_POST["documento"]),
+            "EMAIL" => trim($_POST["correo"]),
+            "NUMERO" => trim($_POST["numero"]),
+            "USER" => trim($_POST["usuario"]),
             "STATUS" => isset($_POST["activo"]) ? $_POST["activo"] : 0,
-            "RESET" => isset($_POST["reset"]) ? $_POST["reset"] : 0
+            "RESET" => isset($_POST["reset"]) ? $_POST["reset"] : 0,
+            "DIRECCION" => trim($_POST["direccion"]),
+            "PASSWORD" => md5(trim($_POST["documento"]))
         );
         $this->view->url = "/user";
 
@@ -68,6 +70,7 @@ class User extends Controller
             $this->view->messageHeader = "Operación exitósa";
             $this->view->message = "La operación se realizó con exito.";
         } catch (Exception $ex) {
+            echo($ex);
             $this->view->messageHeader = "Operación fallida";
             $this->view->message = "Ocurrió un error al ejecutar la operación.";
         } finally {

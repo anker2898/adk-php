@@ -35,6 +35,7 @@ class LoginModel extends Model {
                 $path = array(
                     "path" => $row["URL"],
                     "label" => $row["LABEL"],
+                    "icon" => $row["ICON"],
                 );
                 array_push($result["PRIVILEGIOS"], $path);
             }

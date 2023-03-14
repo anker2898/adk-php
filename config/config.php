@@ -1,7 +1,7 @@
 <?php
 
 //Ruta Local
-define("URL", "http://localhost/ADK-PHP");
+define("URL", "http://localhost/adk");
 
 //Nombre del sistema
 define("SYS", "Anker Development Kit");
@@ -15,7 +15,7 @@ define("DES", "Base de sistemas de información.");
 define("HOST", "localhost");
 define("USER", "root");
 define("PASSWORD", "12345678");
-define("BD", "SysMot");
+define("BD", "adk");
 
 //Contantes de BD QAS
 //define("HOST", "");
