@@ -66,7 +66,7 @@ class User extends Controller
 
         try {
             $this->model->save($data);
-            //$this->model->saveRole($_POST["documento"], $dataRoles);
+            $this->model->saveRole($_POST["documento"], $dataRoles);
             $this->view->messageHeader = "Operación exitósa";
             $this->view->message = "La operación se realizó con exito.";
         } catch (Exception $ex) {
