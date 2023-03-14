@@ -35,7 +35,7 @@ class UserModel extends Model {
     }
 
     public function save($data) {
-        $sql = "CALL SP_INS_USER(:P_SDOCUMENT, :P_SNOMBRE, :P_SAPELLIDO_PAT, :P_SAPELLIDO_MAT, :P_SEMAIL, :P_SNUMBER, :P_NSTATUS, :P_SUSER, :P_BPASSWORD_RESET)";
+        $sql = "CALL SP_INS_USER(:P_SDOCUMENT, :P_SNOMBRE, :P_SAPELLIDO_PAT, :P_SAPELLIDO_MAT, :P_SEMAIL, :P_SNUMBER, :P_NSTATUS, :P_SUSER, :P_NPASSWORD_RESET, :P_SDIRECCION, :P_SPASSWORD)";
         $stm = $this->db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $stm->bindValue(':P_SDOCUMENT', $data["DOCUMENTO"], PDO::PARAM_STR);
         $stm->bindValue(':P_SNOMBRE', $data["NOMBRE"], PDO::PARAM_STR);
@@ -45,7 +45,9 @@ class UserModel extends Model {
         $stm->bindValue(':P_SNUMBER', $data["NUMERO"], PDO::PARAM_STR);
         $stm->bindValue(':P_NSTATUS', $data["STATUS"], PDO::PARAM_INT);
         $stm->bindValue(':P_SUSER', $data["USER"], PDO::PARAM_STR);
-        $stm->bindValue(':P_BPASSWORD_RESET', $data["RESET"], PDO::PARAM_INT);
+        $stm->bindValue(':P_NPASSWORD_RESET', $data["RESET"], PDO::PARAM_INT);
+        $stm->bindValue(':P_SDIRECCION', $data["DIRECCION"], PDO::PARAM_STR);
+        $stm->bindValue(':P_SPASSWORD', $data["PASSWORD"], PDO::PARAM_STR);
         $stm->execute();
     }
 

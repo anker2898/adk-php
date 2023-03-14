@@ -4,6 +4,8 @@ class Login extends Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->view->title = constant("SYS");
+        $this->view->subtitle = constant("DES");
         $this->view->mensaje = false;
     }
 
@@ -13,7 +15,7 @@ class Login extends Controller {
 
     public function auth() {
         $username = $_POST['user'];
-        $password = $_POST['pass'];
+        $password = md5($_POST['pass']);
 
         $data = $this->model->authentication($username, $password);
 
@@ -27,12 +29,12 @@ class Login extends Controller {
         } else {
             $this->view->mensaje = true;
             $this->render();
-        }   
+        }
     }
 
     public function reset() {
         try {
-            $password = $_POST['pass'];
+            $password = md5($_POST['pass']);
             $username = $_SESSION['user']['USUARIO'];
             $this->model->resetPassword($username, $password);
             $this->view->render('main/index');
@@ -41,8 +43,11 @@ class Login extends Controller {
         }
     }
 
-    public function close() {
-        session_destroy();
+    public function close()
+    {
+        unset($_POST);
+        $_SESSION = [];
+        $_SESSION["login"] = false;
         $this->render();
     }
 

@@ -167,7 +167,7 @@
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="<?php echo constant("URL") ?>/dashboard/auth/sign-in.html">Cerrar sesi&oacute;n</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo constant("URL") ?>/login/close">Cerrar sesi&oacute;n</a></li>
                                 </ul>
                             </li>
                         </ul>

@@ -7,6 +7,6 @@ require_once './lib/view.php';
 
 require_once './config/config.php';
 
-$app = new App();
+@$app = new App();
 
 ?>
