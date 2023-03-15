@@ -1,7 +1,7 @@
 <?php
 
 //Ruta Local
-define("URL", "http://localhost/adk");
+define("URL", "http://192.168.31.201/adk");
 
 //Nombre del sistema
 define("SYS", "Anker Development Kit");
@@ -22,3 +22,5 @@ define("BD", "adk");
 //define("USER", "");
 //define("PASSWORD", "");
 //define("BD", "");
+
+define("TYPE-DATA", array("S" => "Texto", "N" => "Número"));
